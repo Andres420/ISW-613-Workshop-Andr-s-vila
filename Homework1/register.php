@@ -22,7 +22,7 @@
             <input type='email' name='e-mail' id='theinputemail'>
             <br/>
 
-            <input type="submit" value="Send Information">
+            <input type="submit" value="Save">
 
         </form>
 
