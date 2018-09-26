@@ -26,13 +26,13 @@ echo "Average from tempeture is: ". array_sum($tempetures) / count(array_filter(
 
 
 echo "\nLowest tempetures: ";
-for ($i = 1; $i <= 5; $i++) {
+for ($i = 1; $i <= 7; $i++) {
     echo $tempetures[$i].",";
 }
 
 echo "\nHighest tempetures: ";
 
-for ($i = count($tempetures)-1; $i >= count($tempetures)-5; $i--) {
+for ($i = count($tempetures)-1; $i >= count($tempetures)-7; $i--) {
     echo $tempetures[$i].",";
 }
 ?>
