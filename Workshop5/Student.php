@@ -1,37 +1,38 @@
 <?php
-class Student{
-    private $id = 0;
-    private $first_name = "nombre";
-    private $last_name = "apellido";
-    private $email_address = "@gmail.com";
+ require 'DataAccess.php'; 
 
-    function __contructor($id,$first_name,$last_name,$email_address){
-        $this->id = $id;
-        $this->first_name = $first_name;
-        $this->last_name = $last_name;
-        $this->email_address = $email_address;
-    }
-
-    public function addStudent()
-    {
-        
-    }
-
-    public function editStudent()
-    {
-        
-    }
-
-    public function deleteStudent()
-    {
-        
-    }
-
-    public function readStudent()
-    {
-        
-    }
+ class Student extends DataAccess{ 
+   
+    private $id;
     
+
+    function __construct($id){
+        parent::__construct();
+        $this->id = $id;
+    }
+
+    public function addStudent($first_name,$last_name,$email_address)
+    {        
+        $this->insertStudent($this->id,$first_name,$last_name,$email_address);
+    }
+
+    public function editStudent($params)
+    {
+        $this->updateStudent($this->id, $params);
+    }
+
+    public function deleteStudentChild()
+    {
+        $this->deleteStudent($this->id);
+    }
+
+    public function readStudentChild()
+    {
+        $this->readStudent($this->id);
+    }
+    public function closeDataBaseChild(){
+        $this->closeDataBase();
+    }
 }
 
 ?>
